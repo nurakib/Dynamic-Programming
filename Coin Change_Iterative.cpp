@@ -3,12 +3,14 @@ using namespace std;
 #define MAX 30005
 int coins[] = {1, 5, 10, 25, 50};
 long long dp[30000];
+
 void count(){
     dp[0] = 1;
     for(int i = 0; i < 5; i++)
         for(int j = coins[i]; j < MAX; j++)
             dp[j] += dp[j - coins[i]];
 }
+
 int main(){
     count();
     int amnt;
