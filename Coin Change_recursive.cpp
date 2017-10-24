@@ -3,6 +3,7 @@ using namespace std;
 #define MAX 30005
 int make, coin[] = {1, 5, 10, 25, 50};
 long long dp[6][MAX];
+
 long long call(int i, int amnt){
     if(i >= 5){
         if(amnt == 0) return 1;
@@ -15,6 +16,7 @@ long long call(int i, int amnt){
     ret2 = call(i + 1, amnt);
     return dp[i][amnt] = ret1 + ret2;
 }
+
 int main(){
     long long ans;
     memset(dp, - 1, sizeof(dp));
